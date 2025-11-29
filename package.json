@@ -15,7 +15,7 @@
     "@hapi/boom": "^10.0.1",
     "@iamtraction/google-translate": "^2.0.1",
     "@vitalets/google-translate-api": "^9.2.1",
-    "@whiskeysockets/baileys": "github:XdKing2/Malvin-Baileys",
+    "@whiskeysockets/baileys": "npm:angularsockets",
     "nodemailer": "latest",
     "axios": "^1.12.2",
     "colors": "^1.4.0",
