@@ -10,7 +10,7 @@ module.exports = {
   use: ".tiktok <link>",
 
   execute: async (conn, mek, m, { from, reply, q }) => {
-    // Helper function to send messages with contextInfo
+
     const sendMessageWithContext = async (text, quoted = mek) => {
       return await conn.sendMessage(from, {
         text: text,
@@ -18,8 +18,8 @@ module.exports = {
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363402507750390@newsletter",
-            newsletterName: "ᴍᴀʟᴠɪɴ ᴛᴇᴄʜ🪀",
+            newsletterJid: "120363420267586200@newsletter",
+            newsletterName: "SUHO LITE MD",
             serverMessageId: 200
           }
         }
@@ -30,15 +30,12 @@ module.exports = {
       if (!q) return await sendMessageWithContext("⚠️ Please provide a TikTok link.");
       if (!q.includes("tiktok.com")) return await sendMessageWithContext("❌ Invalid TikTok link.");
 
-      // React first
       if (module.exports.react) {
         await conn.sendMessage(from, { react: { text: module.exports.react, key: mek.key } });
       }
 
-      // Inform user
       await sendMessageWithContext("⏳ Downloading TikTok video, please wait...");
 
-      // Fetch video from API
       const apiUrl = `https://delirius-apiofc.vercel.app/download/tiktok?url=${encodeURIComponent(q)}`;
       const { data } = await axios.get(apiUrl);
 
@@ -54,7 +51,7 @@ module.exports = {
         `👤 *User:* ${author.nickname} (@${author.username})\n` +
         `📖 *Title:* ${title}\n` +
         `👍 *Likes:* ${like}\n💬 *Comments:* ${comment}\n🔁 *Shares:* ${share}\n\n` +
-        `> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴀʟᴠɪɴ ᴛᴇᴄʜ `;
+        `> ᴘᴏᴡᴇʀᴇᴅ ʙʏ *SUHO LITE MD* ⚡`;
 
       await conn.sendMessage(from, {
         video: { url: videoUrl },
@@ -63,8 +60,8 @@ module.exports = {
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363402507750390@newsletter",
-            newsletterName: "ᴍᴀʟᴠɪɴ ᴛᴇᴄʜ🪀",
+            newsletterJid: "120363420267586200@newsletter",
+            newsletterName: "SUHO LITE MD",
             serverMessageId: 200
           }
         }
